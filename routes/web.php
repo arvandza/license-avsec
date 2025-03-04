@@ -14,6 +14,9 @@ Route::get('/', [LoginController::class, 'index'])->name('login');
 Route::get('login', [LoginController::class, 'index'])->name('login');
 Route::post('auth', [LoginController::class, 'login'])->name('auth');
 Route::get('logout', [LoginController::class, 'logout'])->name('logout');
+Route::get('mail', function () {
+    return view('mail.mail');
+});
 
 Route::middleware(['auth'])->group(function () {
 

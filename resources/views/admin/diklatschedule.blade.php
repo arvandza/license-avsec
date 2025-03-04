@@ -88,7 +88,7 @@
                                                             <div class="mb-3">
                                                                 <label class="form-label">Sertifikat Diklat</label>
                                                                 <input class="form-control" type="file"
-                                                                    name="certificate_url" accept="application/pdf">
+                                                                    name="certificate_url" accept="image/*">
                                                             </div>
                                                         </div>
                                                     </div>

@@ -63,10 +63,10 @@ License: For each use you must have a valid license purchased only from above li
                                 </div>
                                 <div class="col-md-8 ps-md-0">
                                     <div class="auth-form-wrapper px-4 py-5">
-                                        <a href="#"
-                                            class="noble-ui-logo d-block mb-2">Sistem<span>Lisensi</span></a>
-                                        <h5 class="text-muted fw-normal mb-4">Selamat datang di Sistem Lisensi Pegawai
-                                            Bandara.</h5>
+                                        <a href="#" class="noble-ui-logo d-block mb-2">Avsec<span>
+                                                Djalaluddin</span></a>
+                                        <h5 class="text-muted fw-normal mb-4">Selamat datang di Avsec Djalaluddin
+                                            Gorontalo</h5>
                                         <form class="forms-sample" action="{{ route('auth') }}" method="POST">
                                             @csrf
                                             @method('POST')

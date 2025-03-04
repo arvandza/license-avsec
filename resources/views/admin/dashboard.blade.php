@@ -7,7 +7,7 @@
     @section('current_page')Dashboard @endsection
     <div class="d-flex justify-content-between align-items-center flex-wrap grid-margin">
         <div>
-            <h4 class="mb-3 mb-md-0">Welcome to Dashboard</h4>
+            <h4 class="mb-3 mb-md-0">Selamat Datang di Sistem Lisensi Bandar Udara Djalaluddin Gorontalo</h4>
         </div>
     </div>
 

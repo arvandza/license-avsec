@@ -11,6 +11,11 @@ class LoginController extends Controller
 {
     public function index()
     {
+        $auth = Auth::check();
+
+        if ($auth) {
+            return $this->redirectToRole();
+        }
         return view('login');
     }
 

@@ -22,11 +22,6 @@ class LicenseController extends Controller
         return view('admin.license', compact('license'));
     }
 
-    public function indexLicenses()
-    {
-        $license = License::where('status', 'ACCEPTED')->paginate(20);
-        return view('admin.verification-license', compact('license'));
-    }
 
     /**
      * Show the form for creating a new resource.

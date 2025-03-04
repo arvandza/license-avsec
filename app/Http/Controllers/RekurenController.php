@@ -106,8 +106,8 @@ class RekurenController extends Controller
                 $user = User::findOrFail($submission->license->employee->user_id);
                 $user->notify(new Notifications('Anda terpilih mengikuti tes rekuren', route('pegawais.index')));
                 Mail::to($user->email)->send(new MailNotification(
-                    'Selamat Anda Terpilih Mengikuti Diklat',
-                    'Anda terpilih mengikuti diklat pada tanggal ' . $request->date,
+                    'Selamat Anda Terpilih Mengikuti Rekuren',
+                    'Anda terpilih mengikuti rekuren pada tanggal ' . $request->date,
                     route('pegawais.index')
                 ));
                 return [

@@ -53,7 +53,7 @@ class DiklatController extends Controller
                 $user->notify(new Notifications('Anda terpilih mengikuti diklat', route('pegawais.index')));
                 Mail::to($user->email)->send(new MailNotification(
                     'Selamat Anda Terpilih Mengikuti Diklat',
-                    'Anda terpilih mengikuti diklat pada tanggal ' . $validatedDate,
+                    'Anda terpilih mengikuti diklat pada tanggal {$validatedDate}',
                     route('pegawais.index')
                 ));
             }
@@ -92,7 +92,7 @@ class DiklatController extends Controller
             $request->validate([
                 'result' => 'required|in:GRADUATED,UNGRADUATED',
                 'notes' => 'nullable|string|max:150',
-                'certificate_url' => 'required|file|mimes:pdf|max:1048',
+                'certificate_url' => 'required|file|mimes:jpeg,png,jpg|max:1048',
             ]);
 
             $promotionLevels = [
