@@ -183,7 +183,7 @@ class PegawaiController extends Controller
                 'license_type' => 'required|in:BASIC AVSEC,JUNIOR AVSEC,SENIOR AVSEC',
                 'license_number' => 'required|unique:license,license_number',
                 'end_date' => 'required|date',
-                'license_url' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+                'license_url' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
             ]);
 
             $fileUrl = null;

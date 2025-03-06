@@ -3,11 +3,13 @@
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DiklatController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\FileManagerController;
 use App\Http\Controllers\LicenseController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\RekurenController;
+use App\Models\FileManager;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [LoginController::class, 'index'])->name('login');
@@ -43,6 +45,8 @@ Route::middleware(['auth'])->group(function () {
         Route::put('diklat-schedule/{schedule}/graduated', [DiklatController::class, 'graduated'])->name('diklat.graduated');
         Route::get('diklat-history', [DiklatController::class, 'indexHistory'])->name('diklat.indexHistory');
         Route::put('license-action/{license}', [LicenseController::class, 'actionSubmission'])->name('licenses.submission');
+        Route::get('/file-manager', [FileManagerController::class, 'indexManager'])->name('file-manager.index');
+        Route::get('/file-manager/{folder}', [FileManagerController::class, 'showFiles'])->name('file-manager.show');
     });
 
     Route::resource('pegawais', PegawaiController::class);
@@ -52,4 +56,8 @@ Route::middleware(['auth'])->group(function () {
     Route::post('license-submission', [PegawaiController::class, 'licenseSubmission'])->name('license-submission');
     Route::get('/notifications', [NotificationController::class, 'fetchNotifications'])->name('notifications');
     Route::get('/notifications/clear', [NotificationController::class, 'clearNotifications'])->name('notifications.clear');
+    Route::post('file-manager/upload', [FileManagerController::class, 'upload'])->name('file-manager.upload');
+    Route::get('/pegawai/file-managers', [FileManagerController::class, 'index'])->name('file-manager');
+    Route::get('/file-manager/download/{id}', [FileManagerController::class, 'download'])->name('file-manager.download');
+    Route::delete('/file-manager/delete/{id}', [FileManagerController::class, 'destroy'])->name('file-manager.destroy');
 });

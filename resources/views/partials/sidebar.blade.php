@@ -91,6 +91,14 @@
                     </div>
                 </li>
 
+                <li class="nav-item nav-category">File Manager</li>
+                <li class="nav-item">
+                    <a href="{{ route('file-manager.index') }}" class="nav-link">
+                        <i class="link-icon" data-feather="archive"></i>
+                        <span class="link-title">Berkas Pegawai</span>
+                    </a>
+                </li>
+
             </ul>
         @else
             <ul class="nav">

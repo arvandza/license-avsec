@@ -38,8 +38,7 @@ License: For each use you must have a valid license purchased only from above li
             @include('partials.navbar')
             <!-- partial -->
 
-            <div class="page-content"
-                style="background-image: url('{{ asset('assets/images/backgroundimage.jpeg') }}'); background-size: cover;">
+            <div class="page-content">
 
                 <nav class="page-breadcrumb">
                     <ol class="breadcrumb">

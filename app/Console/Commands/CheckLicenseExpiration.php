@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Mail\MailNotification;
 use App\Models\License;
+use App\Models\User;
 use App\Notifications\Notifications;
 use Carbon\Carbon;
 use Illuminate\Console\Command;
@@ -45,6 +46,8 @@ class CheckLicenseExpiration extends Command
 
                 if ($user) {
                     $user->notify(new Notifications('Lisensi anda akan segera expired', route('pegawais.index')));
+                    $admin = User::where('role_id', 1)->first();
+                    $admin->notify(new Notifications('Lisensi ' . $license->license_number . ' akan segera expired', route('pegawais.index')));
                     Mail::to($user->email)->send(new MailNotification(
                         'Peringatan Lisensi Akan Kadaluarasa',
                         'Lisensi Anda akan berkahir dalam ' . $diffInDays . ' hari. Segera perbarui sebelum masa berlaku habis.',

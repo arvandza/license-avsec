@@ -76,6 +76,13 @@
                         </li>
 
                         <li class="dropdown-item py-2">
+                            <a href="{{ route('file-manager') }}" class="text-body ms-0">
+                                <i class="me-2 icon-md" data-feather="archive"></i>
+                                <span>Berkas Saya</span>
+                            </a>
+                        </li>
+
+                        <li class="dropdown-item py-2">
                             <a href="{{ route('logout') }}" class="text-body ms-0">
                                 <i class="me-2 icon-md" data-feather="log-out"></i>
                                 <span>Log Out</span>
